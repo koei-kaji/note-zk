@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv run:*)",
+      "Bash(make:*)",
+      "Bash(git:*)",
+      "mcp__zk-mcp"
+    ],
+    "deny": [
+      "Bash(rm -r:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(git commit:*)",
+      "Bash(python:*)",
+      "Bash(uv tool:*)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "zk-mcp"
+  ]
+}

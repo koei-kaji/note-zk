@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "zk-mcp": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/Users/koei-kaji/src/github.com/koei-kaji/zk-mcp/",
+        "run",
+        "server.py"
+      ],
+      "env": {
+        "ZK_DIR": "/Users/koei-kaji/src/github.com/koei-kaji/note-zk"
+      }
+    }
+  }
+}
