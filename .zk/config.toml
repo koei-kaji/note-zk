@@ -86,7 +86,7 @@ extension = "md"
 paths = ["PermanentNotes"]
 
 [group.permanent.note]
-filename = "perm-{{id}}-{{format-date now 'timestamp'}}"
+filename = "{{slug title}}"
 extension = "md"
 
 [group.structure]
