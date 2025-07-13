@@ -7,3 +7,5 @@ title: Koei's Digital Garden
 ## [[StructureNotes/]]
 
 ## [[PermanentNotes/]]
+
+## [[LiteratureNotes/]]

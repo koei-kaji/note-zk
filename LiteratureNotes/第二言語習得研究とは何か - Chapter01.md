@@ -19,6 +19,8 @@ extra:
 
 # 内容・要約
 
+<iframe width="768" height="496" src="https://miro.com/app/live-embed/uXjVN9xSvLc=/?focusWidget=3458764634434231867&embedMode=view_only_without_ui&embedId=947260572536" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+
 ## 第二言語習得研究（SLA）とは
 
 - 第二言語習得は「Second Language Acquisition」、略してSLA
@@ -40,17 +42,3 @@ extra:
 - **インプット学習**: 本やCDを聞いて言語情報を受け取る学習
 - **アウトプット学習**: 書いたり話したりする学習
 - **インタラクション**: アウトプット学習のうち、学習者が実際にやりとりすること
-
-# 重要な概念・アイデア
-
-1. **SLAの研究範囲の広さ**: 4技能だけでなく、動機づけや母語との関係性まで含む包括的な分野
-2. **環境による学習の違い**: ESLとEFLの区別の重要性
-3. **学習方法の分類**: インプット・アウトプット・インタラクションの概念整理
-
-# 引用・メモ
-
-- 母語: mother tongue, L1
-- 第二言語: L2
-- 第二言語学習者: L2 users
-- ESL: English as a Second Language
-- EFL: English as a Foreign Language
