@@ -249,4 +249,4 @@ ls-rtlit = "zk edit $ZK_NOTEBOOK_DIR/StructureNotes --sort created- --interactiv
 lit= 'zk new --no-input "$ZK_NOTEBOOK_DIR/LiteratureNotes" --title "$*"'
 ls-lit = "zk edit $ZK_NOTEBOOK_DIR/LiteratureNotes --sort created- --interactive"
 ## Generate a bibliography from literature notes
-cit = 'zk list --interactive --quiet --format path --delimiter0 "$ZK_NOTEBOOK_DIR/LiteratureNotes" | xargs -0 yq --front-matter=extract -r "(.extra.authors | join(\",\")) + \". \" + (.title) + \". \" + (.extra.publication) + \". \" + (.extra.published_at) + \". \" + (.extra.url)"'
+cit = 'zk list --interactive --quiet --format path --delimiter0 "$ZK_NOTEBOOK_DIR/StructureNotes/Literature" | xargs -0 yq --front-matter=extract -r "(.extra.authors | join(\",\")) + \". \" + (.title) + \". \" + (.extra.publication) + \". \" + (.extra.published_at) + \". \" + (.extra.url)"'
