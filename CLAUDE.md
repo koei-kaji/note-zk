@@ -18,12 +18,32 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **ノートテンプレート**: `.zk/templates/`にメタデータ用のフロントマター付きで配置
 - **グループ**: 異なるノートタイプには独自のファイル名パターンとテンプレート
 - **言語**: 日本語(`ja`)用に設定、カスタムスラッグ対応
-- **リンク**: Wikiスタイルのリンク(`[[note-title]]`)を使用
+- **リンク**: Wikiスタイルのリンク(`[[ファイルパス|表示名]]`)を使用
 - **データベース**: インデックスと検索用のSQLiteデータベース`.zk/notebook.db`
 
 ## Claude Code での操作方法
 
 Claude Code環境では、zkコマンドの代わりにMCP (Model Context Protocol) zk-mcpツールを使用してノートを管理します。
+
+### Fleeting Note 作成
+
+See @.claude/commands/flt.md
+
+### Permanent Notes 作成
+
+See @.claude/commands/perm.md
+
+### Root Literature Note 作成
+
+See @.claude/commands/rtlit.md
+
+### Literature Note 作成
+
+See @.claude/commands/lit.md
+
+### Note 検索
+
+See @.claude/commands/find.md
 
 ### ノート作成
 
@@ -97,10 +117,34 @@ mcp__zk-mcp__get_tags を使用
 - `aliases`: 別名の配列
 - `draft`: ドラフトステータス（真偽値）
 
-文献ノートには追加のメタデータが含まれます：
+## Literature Notes の構成
+
+このシステムでは、文献管理を2層構造で行います：
+
+### Root Literature Note（Structure Note）
+文献の基本情報を管理するノート：
 - `type`: 書籍/動画/ブログ/参考資料
 - `publication`: 出版物名
 - `published_at`: 出版日
 - `authors`: 著者名の配列
 - `url`: ソースURL
+- `progress`: 進捗状況（TODO/IN PROGRESS/DONE/PENDING/REJECT）
 - `evaluation`: 評価（1-5）
+
+### Literature Note（Literature Note）
+章・セクション別の詳細ノート：
+- `chapter`: 章・セクション情報
+- `page`: ページ番号
+- Root Literature Noteへのwikiリンクで関連付け
+
+## ノート作成時の重要な原則
+
+### 情報の取り扱い
+- **ユーザ入力のみ記載**: ユーザが発言した内容のみを体系的・構造的に記載する
+- **情報補完禁止**: ユーザが発言していない解釈、考察、感想は一切追加しない
+- **事実のみ記録**: あなたの解釈ではなく、ユーザの考えや発言そのものを記録する
+
+### リンク記載方法
+- **ファイルパス形式**: `[[ファイルパス|表示名]]` の形式を使用
+- **例**: `[[LiteratureNotes/lit-xxx-timestamp.md|Chapter01]]`
+- **Root Literature Note参照**: `[[StructureNotes/Literature/文献名.md|文献名]]`

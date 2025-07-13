@@ -3,12 +3,8 @@ title: "{{ title }}"
 date: "{{format-date now '%Y-%m-%d'}}"
 tags: []
 aliases: []
-draft: true
+draft: false
 extra:
-  type: "" # Book or Video or Blog or Reference
-  publication: ""
-  published_at: "" # yyyy-mm-dd
-  authors: []
-  url: ""
-  evaluation: "" # 1-5
+  chapter: "" # 章・セクション情報
+  page: "" # ページ番号
 ---

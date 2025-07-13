@@ -86,23 +86,30 @@ extension = "md"
 paths = ["PermanentNotes"]
 
 [group.permanent.note]
-filename = "{{slug title}}"
+filename = "{{title}}"
 extension = "md"
 
 [group.structure]
 paths = ["StructureNotes"]
 
 [group.structure.note]
-filename = "{{slug title}}"
+filename = "{{title}}"
 extension = "md"
+
+[group.root_literature]
+paths = ["StructureNotes/Literature"]
+
+[group.root_literature.note]
+filename = "{{title}}"
+extension = "md"
+template = "root-literature.md"
 
 [group.literature]
 paths = ["LiteratureNotes"]
 
 [group.literature.note]
-filename = "lit-{{id}}-{{format-date now 'timestamp'}}"
+filename = "{{title}}"
 extension = "md"
-template = "literature.md"
 
 
 # MARKDOWN SETTINGS
@@ -205,6 +212,7 @@ echo 'Creating drecttories...' \
 && mkdir -p $ZK_NOTEBOOK_DIR/PermanentNotes \
 && mkdir -p $ZK_NOTEBOOK_DIR/StructureNotes \
 && mkdir -p $ZK_NOTEBOOK_DIR/LiteratureNotes \
+&& mkdir -p $ZK_NOTEBOOK_DIR/StructureNotes/Literature \
 && set +eux \
 && echo 'Done.'
 """
@@ -234,6 +242,10 @@ ls-perm = "zk edit $ZK_NOTEBOOK_DIR/PermanentNotes --sort created- --interactive
 str = 'zk new --no-input "$ZK_NOTEBOOK_DIR/StructureNotes" --title "$*"'
 ls-str = "zk edit $ZK_NOTEBOOK_DIR/StructureNotes --sort created- --interactive"
 # Literature notes
+## Root literature note
+rtlit= 'zk new --no-input "$ZK_NOTEBOOK_DIR/StructureNotes/Literature" --title "$*"'
+ls-rtlit = "zk edit $ZK_NOTEBOOK_DIR/StructureNotes --sort created- --interactive"
+## literature note
 lit= 'zk new --no-input "$ZK_NOTEBOOK_DIR/LiteratureNotes" --title "$*"'
 ls-lit = "zk edit $ZK_NOTEBOOK_DIR/LiteratureNotes --sort created- --interactive"
 ## Generate a bibliography from literature notes
