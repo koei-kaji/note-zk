@@ -1,150 +1,99 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+このファイルは、Claude Code (claude.ai/code) がこのリポジトリで作業する際のガイダンスを提供します。
 
 ## プロジェクト概要
 
-このリポジトリは[zk](https://github.com/zk-org/zk)ツールを使用したZettelkastenノートシステムです。タイプ別に整理された相互接続されたノートのコレクションを管理します：
+[zk](https://github.com/zk-org/zk)ツールを使用したZettelkastenノートシステムです。タイプ別に整理された相互接続されたノートのコレクションを管理します。
 
-- **FleetingNotes/**: タイムスタンプベースのファイル名を持つ一時的なノート (`flt-{id}-{timestamp}.md`)
-- **PermanentNotes/**: 洗練された永続的なノート (`perm-{id}-{timestamp}.md`)
-- **StructureNotes/**: スラッグベースのファイル名を使用した組織的なノート (`{slug-title}.md`)
-- **LiteratureNotes/**: メタデータを持つ文献ノート (`lit-{id}-{timestamp}.md`)
+### ノートタイプとディレクトリ構造
 
-## アーキテクチャ
+- **FleetingNotes/**: 一時的な思考やアイデア (`flt-{id}-{timestamp}.md`)
+- **PermanentNotes/**: 洗練された永続的な知識 (`{title}.md`)  
+- **StructureNotes/**: 組織的・概念的なノート (`{title}.md`)
+- **StructureNotes/Literature/**: 文献の基本情報 (`{title}.md`)
+- **LiteratureNotes/**: 章・セクション別の詳細ノート (`{title}.md`)
 
-システムは`.zk/config.toml`のzk設定を中心に構築されています：
+## ノート作成の実装
 
-- **ノートテンプレート**: `.zk/templates/`にメタデータ用のフロントマター付きで配置
-- **グループ**: 異なるノートタイプには独自のファイル名パターンとテンプレート
-- **言語**: 日本語(`ja`)用に設定、カスタムスラッグ対応
-- **リンク**: Wikiスタイルのリンク(`[[ファイルパス|表示名]]`)を使用
-- **データベース**: インデックスと検索用のSQLiteデータベース`.zk/notebook.db`
+### 基本的なワークフロー
 
-## Claude Code での操作方法
+1. **Fleeting Note**: アイデアや思考の一時的記録 → [.claude/commands/flt.md]
+2. **Permanent Note**: Fleeting Noteを統合・洗練 → [.claude/commands/perm.md]
+3. **Root Literature Note**: 文献の基本情報記録 → [.claude/commands/rtlit.md]
+4. **Literature Note**: 章別の詳細ノート → [.claude/commands/lit.md]
+5. **検索・関連分析**: ノート間の関係把握 → [.claude/commands/find.md]
 
-Claude Code環境では、zkコマンドの代わりにMCP (Model Context Protocol) zk-mcpツールを使用してノートを管理します。
-
-### Fleeting Note 作成
-
-See @.claude/commands/flt.md
-
-### Permanent Notes 作成
-
-See @.claude/commands/perm.md
-
-### Root Literature Note 作成
-
-See @.claude/commands/rtlit.md
-
-### Literature Note 作成
-
-See @.claude/commands/lit.md
-
-### Note 検索
-
-See @.claude/commands/find.md
-
-### ノート作成
+### MCP ツールによるノート操作
 
 ```
-# ノートの作成
-mcp__zk-mcp__create_note を使用
-- title: ノートタイトル
-- directory: 作成先ディレクトリ（オプション）
+# ノート作成
+mcp__zk-mcp__create_note(title, directory)
+
+# ノート検索・一覧
+mcp__zk-mcp__get_note_paths(include_str, include_tags, exclude_str, exclude_tags)
+
+# ノート内容読み取り
+mcp__zk-mcp__get_note(path)
+
+# リンク関係分析
+mcp__zk-mcp__get_linking_notes(path)
+
+# タグ一覧取得
+mcp__zk-mcp__get_tags()
 ```
 
-### ノート管理・検索
+## ノート構造とテンプレート
 
-```
-# ノートの検索・一覧取得
-mcp__zk-mcp__get_note_paths を使用
-- include_str: 内容やファイル名に含む文字列でフィルタ
-- exclude_str: 除外する文字列
-- include_tags: 含めるタグ
-- exclude_tags: 除外するタグ
-
-# ノート内容の読み取り
-mcp__zk-mcp__get_note を使用
-- path: ノートファイルのパス
-
-# リンク関係の分析
-mcp__zk-mcp__get_linking_notes を使用
-- path: 対象ノートのパス
-- 戻り値: リンク先、被リンク、関連ノート
-
-# タグの取得
-mcp__zk-mcp__get_tags を使用
-- 全てのタグの一覧を取得
+### 共通フロントマター
+```yaml
+title: "ノートタイトル"
+date: "YYYY-MM-DD"
+tags: []
+aliases: []
+draft: true/false
 ```
 
-## Claude Code でのノート操作ガイダンス
+### Root Literature Note 専用フィールド
+```yaml
+extra:
+  type: "Book/Video/Blog/Reference"
+  publication: "出版社・媒体"
+  published_at: "YYYY-MM-DD"
+  authors: ["著者名"]
+  url: "URL"
+  progress: "TODO/IN PROGRESS/DONE/PENDING/REJECT"
+  evaluation: "1-5"
+```
 
-### 基本的な使用方針
+### Literature Note 専用フィールド
+```yaml
+extra:
+  chapter: "章・セクション情報"
+  page: "ページ番号"
+```
 
-- **ノート作成**: `mcp__zk-mcp__create_note`を使用し、適切なディレクトリとタイトルを指定
-- **ノート検索**: `mcp__zk-mcp__get_note_paths`で条件に合うノートを検索
-- **内容確認**: `mcp__zk-mcp__get_note`で特定のノートの内容を読み取り
-- **関連分析**: `mcp__zk-mcp__get_linking_notes`でノート間の関係を把握
+## 重要なガイドライン
 
-### 検索とフィルタリング
-
-- **文字列検索**: `include_str`で内容やファイル名に含む文字列を指定
-- **タグ検索**: `include_tags`で特定のタグを持つノートを検索
-- **除外検索**: `exclude_str`や`exclude_tags`で不要なノートを除外
-- **演算子**: `AND`/`OR`で複数条件の組み合わせ方を指定
-
-### 日本語ノート管理のポイント
-
-- **スラッグ**: 日本語タイトルは自動的にスラッグ化される
-- **タグ**: 日本語タグも適切に処理される
-- **検索**: 日本語の内容検索も正常に動作する
-
-## 設定
-
-### Claude Code環境
-
-- **MCP連携**: zkツールがMCP経由で利用可能
-- **ノート管理**: 全てのノート操作はMCPツールを通じて実行
-- **検索機能**: 高度な検索・フィルタリング機能を提供
-
-## ノート構造
-
-デフォルトノートには以下のフロントマターが含まれます：
-- `title`: ノートタイトル
-- `date`: 作成日 (YYYY-MM-DD)
-- `tags`: タグの配列
-- `aliases`: 別名の配列
-- `draft`: ドラフトステータス（真偽値）
-
-## Literature Notes の構成
-
-このシステムでは、文献管理を2層構造で行います：
-
-### Root Literature Note（Structure Note）
-文献の基本情報を管理するノート：
-- `type`: 書籍/動画/ブログ/参考資料
-- `publication`: 出版物名
-- `published_at`: 出版日
-- `authors`: 著者名の配列
-- `url`: ソースURL
-- `progress`: 進捗状況（TODO/IN PROGRESS/DONE/PENDING/REJECT）
-- `evaluation`: 評価（1-5）
-
-### Literature Note（Literature Note）
-章・セクション別の詳細ノート：
-- `chapter`: 章・セクション情報
-- `page`: ページ番号
-- Root Literature Noteへのwikiリンクで関連付け
-
-## ノート作成時の重要な原則
-
-### 情報の取り扱い
-- **ユーザ入力のみ記載**: ユーザが発言した内容のみを体系的・構造的に記載する
-- **情報補完禁止**: ユーザが発言していない解釈、考察、感想は一切追加しない
-- **事実のみ記録**: あなたの解釈ではなく、ユーザの考えや発言そのものを記録する
+### 情報記録の原則
+- **ユーザ入力のみ記載**: ユーザが発言した内容のみを体系的・構造的に記載
+- **解釈・考察禁止**: ユーザが発言していない解釈、考察、感想は一切追加しない
+- **事実のみ記録**: 解釈ではなく、ユーザの考えや発言そのものを記録
 
 ### リンク記載方法
-- **ファイルパス形式**: `[[ファイルパス|表示名]]` の形式を使用
-- **例**: `[[LiteratureNotes/lit-xxx-timestamp.md|Chapter01]]`
-- **Root Literature Note参照**: `[[StructureNotes/Literature/文献名.md|文献名]]`
+- **Wikiスタイル**: `[[ファイルパス|表示名]]` の形式を使用
+- **例**: `[[LiteratureNotes/文献名-章名.md|章名]]`
+- **Root参照**: `[[StructureNotes/Literature/文献名.md|文献名]]`
+
+### タグとエイリアス
+- **既存タグ優先**: `mcp__zk-mcp__get_tags()`で取得した既存タグを優先使用
+- **タグ上限**: 1ノートあたり最大3つまで
+- **エイリアス**: 検索性向上のため、英語の別名を1つ付与（Permanent Noteのみ）
+
+## 2層構造の文献管理
+
+### Root Literature Note（StructureNotes/Literature/）
+文献の基本情報・概要・目次を管理する中心的なノート
+
+### Literature Note（LiteratureNotes/）
+章・セクション別の詳細内容を記録し、Root Literature Noteにリンク

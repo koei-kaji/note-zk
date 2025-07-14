@@ -2,52 +2,35 @@
 description: "Note を検索し、情報を取得する"
 ---
 
-## Capabilities
+## ワークフロー
 
-- `mcp__zk-mcp__get_note_paths`: 条件に基づいてNoteを検索し、パスとタイトル情報を取得する
-- `mcp__zk-mcp__get_note`: 指定したパスのNote内容を読み取る
-- `mcp__zk-mcp__get_linking_notes`: 指定したNoteとリンク関係にあるNoteを検索・取得する
-- `mcp__zk-mcp__get_tags`: 使用されているタグの一覧を取得する
+### 1. 検索条件最適化
 
-## Your task
+ユーザ入力から検索意図を理解し、条件を設定：
 
-ユーザの検索要求に基づいて適切なNoteを検索し、情報を提供してください。
+- **文字列検索**: `include_str`（キーワード・タイトル・内容）
+- **タグ検索**: `include_tags`（特定タグ）
+- **除外検索**: `exclude_str`・`exclude_tags`（不要Note除外）
+- **組み合わせ検索**: `AND`/`OR`演算子
 
-### 1. 検索条件の理解と最適化
+### 2. 検索実行・関連Note探索
 
-ユーザの入力から検索意図を理解し、以下の方法で検索条件を設定：
+```
+mcp__zk-mcp__get_note_paths(include_str, include_tags, exclude_str, exclude_tags)
+mcp__zk-mcp__get_note(path) # 必要に応じて内容確認
+mcp__zk-mcp__get_linking_notes(path) # リンク関係（link_to, linked_by, related）
+```
 
-- **文字列検索**: `include_str`でキーワード、タイトル、内容による検索
-- **タグ検索**: `include_tags`で特定のタグを持つNoteを検索
-- **除外検索**: `exclude_str`や`exclude_tags`で不要なNoteを除外
-- **組み合わせ検索**: `AND`/`OR`演算子で複数条件を組み合わせ
+### 3. 結果整理・提示
 
-### 2. 検索実行
-
-`mcp__zk-mcp__get_note_paths`を使用してNote一覧を取得。
-必要に応じて`mcp__zk-mcp__get_note`で具体的な内容を確認。
-
-### 3. 関連Note の探索
-
-検索結果のNoteについて、`mcp__zk-mcp__get_linking_notes`を使用して：
-- リンク先のNote（link_to）
-- 被リンクのNote（linked_by）
-- 関連Note（related）
-
-の情報も提供。
-
-### 4. 結果の整理と提示
-
-検索結果を以下の形式で整理：
 - 該当Note数
 - Note一覧（タイトル、パス、簡潔な説明）
-- 必要に応じてNote内容の抜粋
-- 関連Noteの情報
+- Note内容抜粋（必要時）
+- 関連Note情報
 
-### 5. 検索結果の効果的な活用
+### 4. 活用提案
 
-検索結果をユーザが効果的に活用できるよう以下を提案：
-- **関連性の高いNote群の発見**: 複数のNoteに共通するテーマやパターンの特定
-- **知識のギャップの特定**: 検索結果から不足している情報や観点の指摘
-- **次のアクション提案**: 検索結果に基づく新規Note作成やリンク構築の提案
-- **関連検索の提案**: より深い探索のための追加キーワードやタグの提案
+- **関連Note群発見**: 共通テーマ・パターン特定
+- **知識ギャップ特定**: 不足情報・観点の指摘
+- **次アクション提案**: 新規Note作成・リンク構築
+- **関連検索提案**: 追加キーワード・タグの提案

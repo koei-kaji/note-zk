@@ -2,82 +2,64 @@
 description: "Fleeting Note から Permanent Note を作成する"
 ---
 
-## Capabilities
+## 基本原則
 
-- `mcp__zk-mcp__get_note_paths`: 条件に基づいてNoteを検索し、パスとタイトル情報を取得する
-- `mcp__zk-mcp__get_note`: 指定したパスのNote内容を読み取る
-- `mcp__zk-mcp__get_linking_notes`: 指定したNoteとリンク関係にあるNoteを検索・取得する
-- `mcp__zk-mcp__get_tags`: 使用されているtagの一覧を取得する
-- `mcp__zk-mcp__create_note`: 新しい Note を作成する
-- `Edit`: noteの内容を編集する
+**情報記録原則**: ユーザが発言した内容のみを体系的・構造的に記載し、解釈・考察・感想は一切追加しない。
 
-## Your task
+## ワークフロー
 
-複数のFleeting Noteの内容を整理・統合し、完全な思考のアウトプットとしてPermanent Noteに情報・知識を記録する。
+### 1. 対象Fleeting Note特定・取得
 
-1. 対象となるFleeting Noteを特定・取得する
-2. Fleeting Noteの内容を分析・理解する
-3. 内容を統合・洗練してPermanent Noteを作成する
-4. 関連Noteとのリンク関係を構築する
-5. 元のFleeting Noteの処理を提案する
+**1.1 検索条件確認**
+- 具体的なNote名/ID指定
+- キーワード・タグによる検索条件
+- テーマ・分野による関連Note群特定
 
-### 1. 対象となるFleeting Noteを特定・取得する
+**1.2 Note検索・内容確認**
+```
+mcp__zk-mcp__get_note_paths(include_str, include_tags, ...)
+mcp__zk-mcp__get_note(path) # 必要に応じて内容確認
+```
 
-ユーザから統合したいFleeting Noteの情報を受け取る方法：
-- 具体的なNote名やIDの指定
-- キーワードやタグによる検索条件の提供
-- テーマや分野に基づく関連Note群の特定
+### 2. Fleeting Note分析
 
-`mcp__zk-mcp__get_note_paths`を使用してFleeting Noteディレクトリから対象ノートを検索し、
-必要に応じて`mcp__zk-mcp__get_note`で内容を確認してください。
-
-### 2. Fleeting Noteの内容を分析・理解する
-
-取得したFleeting Noteについて：
-- 各ノートの核心的なアイデアや概念を抽出
+- 各ノートの核心アイデア・概念を抽出
 - ノート間の共通点・関連性・相違点を分析
-- 論理的な構造や流れを整理
-- 不足している情報や発展可能な部分を特定
+- 論理的構造・流れを整理
+- 不足情報・発展可能部分を特定
 
-### 3. 内容を統合・洗練してPermanent Noteを作成する
+### 3. Permanent Note作成・統合
 
-`mcp__zk-mcp__get_tags`で既存タグを取得後、以下の手順でPermanent Noteを作成：
+**3.1 既存タグ取得・Note作成**
+```
+mcp__zk-mcp__get_tags()
+mcp__zk-mcp__create_note(
+  title: "統合されたアイデアを表現する明確なタイトル",
+  directory: "PermanentNotes"
+)
+```
 
-#### 3.1 Permanent Note作成
+**3.2 内容統合・フロントマター更新**
+```
+Edit(
+  - body: 統合された内容（ユーザの思考のみ記載）
+  - tags: 既存タグ優先、新規作成は3つまで
+  - aliases: ["英語別名"] # 検索性向上のため1つ
+  - draft: false
+)
+```
 
-`mcp__zk-mcp__create_note`を使用：
-- title: 統合されたアイデアを表現する明確で検索しやすいタイトル。
-- directory: `PermanentNotes`
+**注意**: Fleeting Noteのリンク記載は不要（後続ステップで削除検討のため）
 
-** Fleeting Note は後続ステップで削除を検討するため、参考情報として FleetingNotes のリンク記載は不要です。**
+### 4. 関連Noteリンク構築
 
-**重要**: ユーザが発言した内容のみを記載し、あなたの解釈や考察は一切追加しないでください。元のFleeting Noteの内容を統合・洗練する際も、ユーザの思考そのものを整理するのみに留めてください。
+```
+mcp__zk-mcp__get_linking_notes(path) # 関連Note特定
+Edit() # Wikiスタイルリンク [[ファイルパス|表示名]] 追加
+```
 
-#### 3.2 内容の構築
+### 5. 元Fleeting Note処理提案
 
-統合された内容を以下の構造で整理：
-- **概要**: 主要な概念やアイデアの要約
-- **詳細**: 論理的に構造化された本文
-- **考察**: より深い洞察や含意
-- **関連事項**: 他のテーマや概念との関連性
-- **参考**: 元となったFleeting Noteへの参照
-
-#### 3.3 フロントマターの設定
-
-- **tags**: 既存タグを優先使用し、必要に応じて新規作成（3つまで）
-- **aliases**: 検索性向上のため、 title の別名（英語）を付与、1つのみ
-- **draft**: false（完成されたPermanent Noteのため）
-
-### 4. 関連Noteとのリンク関係を構築する
-
-`mcp__zk-mcp__get_linking_notes`を使用して：
-- 作成したPermanent Noteに関連する既存のNoteを特定
-- 適切なWikiスタイルリンク（`[[ファイルパス|表示名]]`）を追加
-- 双方向のリンク関係を確認・構築
-
-### 5. 元のFleeting Noteの処理を提案する
-
-Permanent Note作成後の元Fleeting Noteについて：
-- 統合済みのFleeting Noteの削除を提案
-- 部分的に使用されたFleeting Noteの残存部分の処理方針
-- Structure Noteでの整理が必要な場合の提案
+- 統合済みFleeting Noteの削除提案
+- 部分使用Noteの残存部分処理方針
+- Structure Note整理の必要性提案
