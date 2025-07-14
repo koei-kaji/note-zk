@@ -46,7 +46,7 @@ description: "Root Literature Note (文献情報の本体) を作成する"
 
 `mcp__zk-mcp__create_note`を使用してノートを作成してください：
 
-- title: [文献タイトル]
+- title: [正確な文献タイトル]（YouTube動画の場合は動画タイトルと全く同じにする）
 - directory: `StructureNotes/Literature`
 
 ### 4. Noteの内容を更新する
@@ -64,7 +64,7 @@ description: "Root Literature Note (文献情報の本体) を作成する"
 文献情報に基づいてfrontmatterを更新してください：
 
 - **tags**: 既存tagsから適切なものを選択、または新規作成（3つまで）
-- **title**: 文献タイトルに調整
+- **title**: 正確な文献タイトルに調整（YouTube動画の場合は動画タイトルと全く同じにする）
 - **extra**フィールド:
   - `type`: 文献種別
   - `publication`: 出版社・媒体

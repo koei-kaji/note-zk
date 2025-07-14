@@ -6,7 +6,7 @@ aliases: []
 draft: false
 extra:
   chapter: "Chapter01 - 第二言語習得研究とは何か"
-  page: ""
+  page: "3-17"
 ---
 
 # Root Literature Note
