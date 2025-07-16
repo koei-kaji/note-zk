@@ -106,11 +106,11 @@ config.window_frame = {
 
 ## Color Scheme
 
-[Color Schemes - Wez's Terminal Emulator](https://wezterm.org/colorschemes/index.html) から好きなものを選ぶ。
+[Color Schemes - Wez's Terminal Emulator](https://wezterm.org/colorschemes/index.html) から好きなものを指定できる。
 
-```lua title="~/.config/wezterm/wezterm.lua"
-config.color_scheme = "Tokyo Night"
-```
+> [!WARNING]
+> catppuccin, tmux, nvim を併用している場合、 colorscheme を指定することで逆に変なことになった（原因は正しく調べられていない）。
+> wezterm で設定しなくても問題ないので、現在は設定していない。
 
 ## Background
 

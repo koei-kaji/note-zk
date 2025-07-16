@@ -124,6 +124,17 @@ run ~/.config/tmux/plugins/tmux-cpu/cpu.tmux
 run ~/.config/tmux/plugins/tmux-battery/battery.tmux
 ```
 
+### Pane Background
+
+Pane分割しているときに、どのPaneがアクティブなのかをぱっと見でわかるようにするため、アクティブ・非アクティブのPaneでバックグラウンドカラーを変更している。
+
+```tmux title="~/.config/tmux/tmux.conf"
+set -g window-style 'bg=#11111b'
+set -g window-active-style 'bg=#1e1e2e'
+```
+
+カラーコードは、現在使用している Catppuccin Mocha のカラーパレットを使用している。
+
 ## Others
 
 tmux セッション内での default shell を zsh に指定する。
