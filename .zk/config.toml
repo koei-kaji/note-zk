@@ -79,7 +79,7 @@ id-case = "lower"
 paths = ["FleetingNotes"]
 
 [group.fleeting.note]
-filename = "flt-{{id}}-{{format-date now 'timestamp'}}"
+filename = "flt-{{format-date now 'timestamp'}}-{{id}}"
 extension = "md"
 
 [group.permanent]
@@ -108,7 +108,7 @@ template = "root-literature.md"
 paths = ["LiteratureNotes"]
 
 [group.literature.note]
-filename = "{{title}}"
+filename = "lit-{{format-date now 'timestamp'}}-{{id}}"
 extension = "md"
 
 
