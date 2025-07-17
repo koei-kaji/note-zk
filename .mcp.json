@@ -11,6 +11,13 @@
       "env": {
         "ZK_DIR": "/Users/koei-kaji/src/github.com/koei-kaji/note-zk"
       }
+    },
+    "youtube-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anaisbetts/mcp-youtube"
+      ]
     }
   }
 }

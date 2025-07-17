@@ -38,7 +38,14 @@ mcp__zk-mcp__create_note(
 ```
 
 **3.2 内容・フロントマター更新**
+
+**⚠️ 重要**: ファイル編集前に必ず `Read` ツールでファイル内容を確認すること。Claude Codeの安全機能により、既存ファイルを変更する前にRead必須。
+
 ```
+# 必須: ファイル内容確認
+Read(file_path: "LiteratureNotes/ファイル名.md")
+
+# その後、編集実行
 Edit(
   - body:
     - Root Literature Noteへのwikiリンク: [[ファイルパス|表示名]]
@@ -56,12 +63,14 @@ Edit(
 
 **4.1 Root Literature Noteへのリンク追加**
 ```
+Read(Root Literature Note path) # 編集前の必須確認
 Edit(Root Literature Note) # Literature Notesセクションに新ノートリンク追加
 ```
 
 **4.2 横断的リンク構築**
 ```
 mcp__zk-mcp__get_linking_notes(path) # 関連Literature Note特定
+Read(file_path) # 編集前の必須確認
 Edit() # 必要に応じて横断的リンク追加
 ```
 

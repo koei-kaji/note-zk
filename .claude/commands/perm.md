@@ -40,7 +40,14 @@ mcp__zk-mcp__create_note(
 ```
 
 **3.2 内容統合・フロントマター更新**
+
+**⚠️ 重要**: ファイル編集前に必ず `Read` ツールでファイル内容を確認すること。Claude Codeの安全機能により、既存ファイルを変更する前にRead必須。
+
 ```
+# 必須: ファイル内容確認
+Read(file_path: "PermanentNotes/ファイル名.md")
+
+# その後、編集実行
 Edit(
   - body: 統合された内容（ユーザの思考のみ記載）
   - tags: 既存タグ優先、新規作成は3つまで
@@ -55,6 +62,7 @@ Edit(
 
 ```
 mcp__zk-mcp__get_linking_notes(path) # 関連Note特定
+Read(file_path) # 編集前の必須確認
 Edit() # Wikiスタイルリンク [[ファイルパス|表示名]] 追加
 ```
 

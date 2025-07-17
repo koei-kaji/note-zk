@@ -8,11 +8,11 @@
 
 ### ノートタイプとディレクトリ構造
 
-- **FleetingNotes/**: 一時的な思考やアイデア (`flt-{id}-{timestamp}.md`)
-- **PermanentNotes/**: 洗練された永続的な知識 (`{title}.md`)  
+- **FleetingNotes/**: 一時的な思考やアイデア (`flt-{timestamp}-{id}.md`)
+- **PermanentNotes/**: 洗練された永続的な知識 (`{title}.md`)
 - **StructureNotes/**: 組織的・概念的なノート (`{title}.md`)
 - **StructureNotes/Literature/**: 文献の基本情報 (`{title}.md`)
-- **LiteratureNotes/**: 章・セクション別の詳細ノート (`{title}.md`)
+- **LiteratureNotes/**: 章・セクション別の詳細ノート (`lit-{timestamp}-{id}.md`)
 
 ## ノート作成の実装
 
@@ -74,11 +74,6 @@ extra:
 ```
 
 ## 重要なガイドライン
-
-### 情報記録の原則
-- **ユーザ入力のみ記載**: ユーザが発言した内容のみを体系的・構造的に記載
-- **解釈・考察禁止**: ユーザが発言していない解釈、考察、感想は一切追加しない
-- **事実のみ記録**: 解釈ではなく、ユーザの考えや発言そのものを記録
 
 ### リンク記載方法
 - **Wikiスタイル**: `[[ファイルパス|表示名]]` の形式を使用

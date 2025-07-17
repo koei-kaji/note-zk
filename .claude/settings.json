@@ -4,7 +4,9 @@
       "Bash(uv run:*)",
       "Bash(make:*)",
       "Bash(git:*)",
-      "mcp__zk-mcp"
+      "Bash(http GET:*)",
+      "mcp__zk-mcp",
+      "mcp__youtube-mcp"
     ],
     "deny": [
       "Bash(rm -r:*)",
@@ -12,7 +14,10 @@
       "Bash(wget:*)",
       "Bash(git commit:*)",
       "Bash(python:*)",
-      "Bash(uv tool:*)"
+      "Bash(uv tool:*)",
+      "Bash(http PUT:*)",
+      "Bash(http POST:*)",
+      "Bash(http DELETE:*)",
     ]
   },
   "enabledMcpjsonServers": [
