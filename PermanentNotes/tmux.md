@@ -130,7 +130,7 @@ Pane分割しているときに、どのPaneがアクティブなのかをぱっ
 
 ```tmux title="~/.config/tmux/tmux.conf"
 set -g window-style 'bg=#11111b'
-set -g window-active-style 'bg=#1e1e2e'
+set -g window-active-style 'bg=terminal'
 ```
 
 カラーコードは、現在使用している Catppuccin Mocha のカラーパレットを使用している。
