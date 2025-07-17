@@ -17,10 +17,11 @@
       "Bash(uv tool:*)",
       "Bash(http PUT:*)",
       "Bash(http POST:*)",
-      "Bash(http DELETE:*)",
+      "Bash(http DELETE:*)"
     ]
   },
   "enabledMcpjsonServers": [
-    "zk-mcp"
+    "zk-mcp",
+    "youtube-mcp"
   ]
 }

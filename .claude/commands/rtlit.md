@@ -51,6 +51,8 @@ http GET https://www.googleapis.com/books/v1/volumes q==isbn:ISBN番号 maxResul
 http GET https://www.googleapis.com/books/v1/volumes q==intitle:書籍名+inauthor:著者名 maxResults==3
 ```
 
+**注意： q=="intitle:書籍名" のように `"` をつけないでください。**
+
 **YouTube動画情報取得**
 ```bash
 # 動画情報と字幕の取得
