@@ -53,13 +53,30 @@ Edit(
     - Source Noteへのwikiリンク: [[ファイルパス|表示名]]
     - 章・セクション情報詳細
     - 内容・要約（ユーザの思考のみ記載）
-  - tags: Source Noteと整合性のあるタグ（3つまで）
+  - tags: 概念タグ・人名タグ中心
   - extra:
     - chapter: 章・セクション名
     - page: ページ番号・範囲
   - draft: false
 )
 ```
+
+### 3.3 LiteratureNotes特化タグガイドライン
+
+**タグ選択方針**（Source Notesで分野タグ管理済みのため、以下に特化）:
+- **専門領域タグ**: `pragmatics`, `phonetics`, `syntax`, `morphology`
+- **具体的概念タグ**: `information-structure`, `bics-calp`, `interdependence-hypothesis`
+- **研究者タグ**: `jim-cummins`, `stephen-krashen`, `chomsky`
+
+**命名規則**:
+- 概念: 正式英語名のkebab-case (`information-structure`)
+- 理論: 一般的略語優先（`bics`, `calp`）
+- 研究者: `firstname-lastname` (`jim-cummins`)
+
+**タグ抽出のポイント**:
+- 章・セクションで言及される主要概念を特定
+- 引用・参照される研究者をタグ化
+- 抽象的すぎるタグ（`education`, `language`）は避ける
 
 ### 4. 相互リンク構築
 

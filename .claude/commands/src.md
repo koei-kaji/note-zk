@@ -86,7 +86,7 @@ Edit(
     - 概要セクション: 文献要約
     - 目次・構成セクション: 章立て情報
     - Literature Notesセクション: 後で追加予定（空）
-  - tags: 既存タグ優先、新規作成は3つまで
+  - tags: 既存タグ優先
   - extra:
     - type: 文献種別
     - publication: 出版社・媒体

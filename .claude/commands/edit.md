@@ -54,6 +54,10 @@ Edit(
 - **FleetingNotes**: アイデアの発展・詳細化
 - **PermanentNotes**: 新しい洞察・関連概念の追加
 - **LiteratureNotes**: 章・セクションの追加内容・考察
+  - **タグ更新**: 内容から専門用語・概念を抽出してタグ化
+  - **研究者タグ**: 言及される研究者をタグ追加 (`jim-cummins`, `chomsky`)
+  - **概念タグ**: 具体的概念の追加 (`information-structure`, `bics-calp`)
+  - **Source Note連携**: 基盤タグ重複を避け、具体的概念に特化
 - **StructureNotes**: 組織的情報の拡張・更新
 
 ### 4. 関連リンク更新（必要時）

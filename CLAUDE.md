@@ -81,9 +81,31 @@ extra:
 - **Source参照**: `[[SourceNotes/文献名.md|文献名]]`
 
 ### タグとエイリアス
-- **既存タグ優先**: `mcp__zk-mcp__get_tags()`で取得した既存タグを優先使用
-- **タグ上限**: 1ノートあたり最大3つまで
-- **エイリアス**: 検索性向上のため、英語の別名を1つ付与（Permanent Noteのみ）
+
+#### 基本原則
+- **言語**: 英語のみ
+- **形式**: kebab-case (`jim-cummins`, `information-structure`)
+- **一意性確保**: 新規タグ前に `mcp__zk-mcp__get_tags()` で既存確認必須
+
+#### タグカテゴリ（概念分類）
+- **分野タグ**: `linguistics`, `education`, `sla`
+- **専門領域タグ**: `pragmatics`, `phonetics`, `syntax`
+- **概念タグ**: `information-structure`, `bics-calp`, `interdependence-hypothesis`
+- **人名タグ**: `jim-cummins`, `stephen-krashen`, `chomsky`
+
+#### ノートタイプ別タグ方針
+- **Source Notes**: 分野タグ中心（`sla`, `education`, `linguistics`）
+- **Literature Notes**: 概念タグ・人名タグ中心
+- **Permanent Notes**: 概念タグ中心
+- **Fleeting Notes**: 自由度高め
+
+#### 命名規則
+- **概念**: 正式英語名のkebab-case (`information-structure`)
+- **理論**: 一般的略語優先（`bics`, `calp`, `sla`）
+- **研究者**: `firstname-lastname` (`jim-cummins`)
+
+#### エイリアス
+- **Permanent Noteのみ**: 検索性向上のため、英語の別名を1つ付与
 
 ## 2層構造の文献管理
 
