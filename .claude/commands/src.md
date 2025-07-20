@@ -1,5 +1,5 @@
 ---
-description: "Root Literature Note (文献情報の本体) を作成する"
+description: "Source Note (文献情報の本体) を作成する"
 ---
 
 ## 基本原則
@@ -61,14 +61,14 @@ mcp__youtube-mcp__download_youtube_url(url)
 
 **重要**: 推測による情報記載は厳禁。必ず公式APIから正確な情報を取得すること。
 
-### 2. Root Literature Note作成
+### 2. Source Note作成
 
 **2.1 既存タグ取得・Note作成**
 ```
 mcp__zk-mcp__get_tags()
 mcp__zk-mcp__create_note(
   title: "正確な文献タイトル", # YouTube動画は動画タイトルと完全一致
-  directory: "StructureNotes/Literature"
+  directory: "SourceNotes"
 )
 ```
 
@@ -78,7 +78,7 @@ mcp__zk-mcp__create_note(
 
 ```
 # 必須: ファイル内容確認
-Read(file_path: "StructureNotes/Literature/ファイル名.md")
+Read(file_path: "SourceNotes/ファイル名.md")
 
 # その後、編集実行
 Edit(

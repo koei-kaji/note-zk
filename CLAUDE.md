@@ -11,7 +11,7 @@
 - **FleetingNotes/**: 一時的な思考やアイデア (`flt-{timestamp}-{id}.md`)
 - **PermanentNotes/**: 洗練された永続的な知識 (`{title}.md`)
 - **StructureNotes/**: 組織的・概念的なノート (`{title}.md`)
-- **StructureNotes/Literature/**: 文献の基本情報 (`{title}.md`)
+- **SourceNotes/**: 文献の基本情報 (`{title}.md`)
 - **LiteratureNotes/**: 章・セクション別の詳細ノート (`lit-{timestamp}-{id}.md`)
 
 ## ノート作成の実装
@@ -20,7 +20,7 @@
 
 1. **Fleeting Note**: アイデアや思考の一時的記録 → [.claude/commands/flt.md]
 2. **Permanent Note**: Fleeting Noteを統合・洗練 → [.claude/commands/perm.md]
-3. **Root Literature Note**: 文献の基本情報記録 → [.claude/commands/rtlit.md]
+3. **Source Note**: 文献の基本情報記録 → [.claude/commands/rtlit.md]
 4. **Literature Note**: 章別の詳細ノート → [.claude/commands/lit.md]
 5. **検索・関連分析**: ノート間の関係把握 → [.claude/commands/find.md]
 
@@ -54,7 +54,7 @@ aliases: []
 draft: true/false
 ```
 
-### Root Literature Note 専用フィールド
+### Source Note 専用フィールド
 ```yaml
 extra:
   type: "Book/Video/Blog/Reference"
@@ -78,7 +78,7 @@ extra:
 ### リンク記載方法
 - **Wikiスタイル**: `[[ファイルパス|表示名]]` の形式を使用
 - **例**: `[[LiteratureNotes/文献名-章名.md|章名]]`
-- **Root参照**: `[[StructureNotes/Literature/文献名.md|文献名]]`
+- **Source参照**: `[[SourceNotes/文献名.md|文献名]]`
 
 ### タグとエイリアス
 - **既存タグ優先**: `mcp__zk-mcp__get_tags()`で取得した既存タグを優先使用
@@ -87,8 +87,8 @@ extra:
 
 ## 2層構造の文献管理
 
-### Root Literature Note（StructureNotes/Literature/）
+### Source Note（SourceNotes/）
 文献の基本情報・概要・目次を管理する中心的なノート
 
 ### Literature Note（LiteratureNotes/）
-章・セクション別の詳細内容を記録し、Root Literature Noteにリンク
+章・セクション別の詳細内容を記録し、Source Noteにリンク

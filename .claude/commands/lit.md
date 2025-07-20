@@ -10,14 +10,14 @@ description: "Literature Note (章・セクション別の詳細ノート) を�
 
 ## ワークフロー
 
-### 1. Root Literature Note特定・確認
+### 1. Source Note特定・確認
 
-**1.1 Root Note特定**
-- ユーザ指定のRoot Literature Note
-- 検索による特定：`mcp__zk-mcp__get_note_paths(include_str="StructureNotes/Literature")`
-- 未存在時：Root Literature Note作成を提案
+**1.1 Source Note特定**
+- ユーザ指定のSource Note
+- 検索による特定：`mcp__zk-mcp__get_note_paths(include_str="SourceNotes")`
+- 未存在時：Source Note作成を提案
 
-**1.2 Root Note内容確認**
+**1.2 Source Note内容確認**
 ```
 mcp__zk-mcp__get_note(path) # 文献基本情報・目次・既存リンクを把握
 ```
@@ -50,10 +50,10 @@ Read(file_path: "LiteratureNotes/ファイル名.md")
 # その後、編集実行
 Edit(
   - body:
-    - Root Literature Noteへのwikiリンク: [[ファイルパス|表示名]]
+    - Source Noteへのwikiリンク: [[ファイルパス|表示名]]
     - 章・セクション情報詳細
     - 内容・要約（ユーザの思考のみ記載）
-  - tags: Root Noteと整合性のあるタグ（3つまで）
+  - tags: Source Noteと整合性のあるタグ（3つまで）
   - extra:
     - chapter: 章・セクション名
     - page: ページ番号・範囲
@@ -63,10 +63,10 @@ Edit(
 
 ### 4. 相互リンク構築
 
-**4.1 Root Literature Noteへのリンク追加**
+**4.1 Source Noteへのリンク追加**
 ```
-Read(Root Literature Note path) # 編集前の必須確認
-Edit(Root Literature Note) # Literature Notesセクションに新ノートリンク追加
+Read(Source Note path) # 編集前の必須確認
+Edit(Source Note) # Literature Notesセクションに新ノートリンク追加
 ```
 
 **4.2 横断的リンク構築**

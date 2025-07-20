@@ -78,4 +78,4 @@ Edit() # 必要に応じて相互リンク追加・更新
 - **PermanentNotes/**: 洗練された知識の拡張
 - **LiteratureNotes/**: 文献ノートの内容追加
 - **StructureNotes/**: 組織的ノートの更新
-- **StructureNotes/Literature/**: Root Literature Noteの情報更新
+- **SourceNotes/**: Source Noteの情報更新

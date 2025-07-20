@@ -26,4 +26,4 @@ YouTube動画による発音解説
 
 # Literature Notes
 
-- [[LiteratureNotes/They're There Their 発音の同一性とネイティブの綴り間違い.md|発音の同一性とネイティブの綴り間違い]]
+- [[LiteratureNotes/lit-202507140000-asdf.md|They're There Their 発音の同一性]]

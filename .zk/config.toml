@@ -96,13 +96,13 @@ paths = ["StructureNotes"]
 filename = "{{title}}"
 extension = "md"
 
-[group.root_literature]
-paths = ["StructureNotes/Literature"]
+[group.source]
+paths = ["SourceNotes"]
 
-[group.root_literature.note]
+[group.source.note]
 filename = "{{title}}"
 extension = "md"
-template = "root-literature.md"
+template = "source.md"
 
 [group.literature]
 paths = ["LiteratureNotes"]
@@ -212,7 +212,7 @@ echo 'Creating drecttories...' \
 && mkdir -p $ZK_NOTEBOOK_DIR/PermanentNotes \
 && mkdir -p $ZK_NOTEBOOK_DIR/StructureNotes \
 && mkdir -p $ZK_NOTEBOOK_DIR/LiteratureNotes \
-&& mkdir -p $ZK_NOTEBOOK_DIR/StructureNotes/Literature \
+&& mkdir -p $ZK_NOTEBOOK_DIR/SourceNotes \
 && set +eux \
 && echo 'Done.'
 """
@@ -242,9 +242,9 @@ ls-perm = "zk edit $ZK_NOTEBOOK_DIR/PermanentNotes --sort created- --interactive
 str = 'zk new --no-input "$ZK_NOTEBOOK_DIR/StructureNotes" --title "$*"'
 ls-str = "zk edit $ZK_NOTEBOOK_DIR/StructureNotes --sort created- --interactive"
 # Literature notes
-## Root literature note
-rtlit= 'zk new --no-input "$ZK_NOTEBOOK_DIR/StructureNotes/Literature" --title "$*"'
-ls-rtlit = "zk edit $ZK_NOTEBOOK_DIR/StructureNotes --sort created- --interactive"
+## Source note
+src = 'zk new --no-input "$ZK_NOTEBOOK_DIR/SourceNotes" --title "$*"'
+ls-src = "zk edit $ZK_NOTEBOOK_DIR/SourceNotes --sort created- --interactive"
 ## literature note
 lit= 'zk new --no-input "$ZK_NOTEBOOK_DIR/LiteratureNotes" --title "$*"'
 ls-lit = "zk edit $ZK_NOTEBOOK_DIR/LiteratureNotes --sort created- --interactive"
