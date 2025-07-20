@@ -9,3 +9,5 @@ title: Koei's Digital Garden
 ## [[PermanentNotes/]]
 
 ## [[LiteratureNotes/]]
+
+## [[SourceNotes/]]
