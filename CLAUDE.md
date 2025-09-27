@@ -4,7 +4,7 @@
 
 ## プロジェクト概要
 
-[zk](https://github.com/zk-org/zk)ツールを使用したZettelkastenノートシステムです。タイプ別に整理された相互接続されたノートのコレクションを管理します。
+[zk](https://github.com/zk-org/zk)ツールを使用したZettelkastenノートシステムです。Sub-AgentsとSlash Commandsを活用した効率的なノート管理システムを提供します。
 
 ### ノートタイプとディレクトリ構造
 
@@ -14,47 +14,130 @@
 - **SourceNotes/**: 文献の基本情報 (`{title}.md`)
 - **LiteratureNotes/**: 章・セクション別の詳細ノート (`lit-{timestamp}-{id}.md`)
 
-## ノート作成の実装
+## Sub-Agents システム
 
-### 基本的なワークフロー
+### 利用可能なSub-Agents
 
-1. **Fleeting Note**: アイデアや思考の一時的記録 → [.claude/commands/flt.md]
-2. **Permanent Note**: Fleeting Noteを統合・洗練 → [.claude/commands/perm.md]
-3. **Source Note**: 文献の基本情報記録 → [.claude/commands/rtlit.md]
-4. **Literature Note**: 章別の詳細ノート → [.claude/commands/lit.md]
-5. **検索・関連分析**: ノート間の関係把握 → [.claude/commands/find.md]
+#### 1. zk-note-manager
+**用途**: 総合的なノート管理と品質保証
+- ノート作成・編集・検索の統合管理
+- システム整合性の維持と品質管理
+- 複数ノートタイプの横断的操作
 
-### MCP ツールによるノート操作
+**使用場面**:
+- 複雑なノート操作や一括管理
+- システム全体の整合性確認
+- 品質管理とバリデーション
+
+#### 2. literature-researcher
+**用途**: 学術文献研究とAPI連携
+- Google Books API連携による正確な文献情報取得
+- YouTube動画の字幕・メタデータ処理
+- Source/Literature Note作成の自動化
+
+**使用場面**:
+- 新しい文献のSource Note作成
+- API連携が必要な情報取得
+- 学術的厳密性が要求される作業
+
+#### 3. knowledge-synthesizer
+**用途**: 知識統合と構造化
+- 複数Fleeting NoteからPermanent Note作成
+- 概念間関係の分析と統合
+- Structure Note設計と作成
+
+**使用場面**:
+- 散在する思考の統合
+- 複雑な概念の体系化
+- 知識領域の構造設計
+
+#### 4. tag-organizer
+**用途**: タグ管理と分類最適化
+- kebab-case英語タグの一貫性維持
+- ノートタイプ別タグ戦略の適用
+- タグ階層とカテゴリの最適化
+
+**使用場面**:
+- タグシステムの整理・最適化
+- 新規タグの検証と作成
+- 分類体系の見直し
+
+#### 5. link-builder
+**用途**: ノート間リンク構築と最適化
+- ノート間関係の分析と可視化
+- 戦略的リンク構築
+- ナレッジネットワークの最適化
+
+**使用場面**:
+- 関連ノートの発見と接続
+- ナビゲーション改善
+- 知識ネットワークの構造化
+
+### Sub-Agents呼び出し方法
 
 ```
-# ノート作成
-mcp__zk-mcp__create_note(title, directory)
-
-# ノート検索・一覧
-mcp__zk-mcp__get_note_paths(include_str, include_tags, exclude_str, exclude_tags)
-
-# ノート内容読み取り
-mcp__zk-mcp__get_note(path)
-
-# リンク関係分析
-mcp__zk-mcp__get_linking_notes(path)
-
-# タグ一覧取得
-mcp__zk-mcp__get_tags()
+@zk-note-manager [タスク内容]
+@literature-researcher [文献情報・URL]
+@knowledge-synthesizer [統合対象の説明]
+@tag-organizer [タグ関連作業]
+@link-builder [リンク構築作業]
 ```
 
-## ノート構造とテンプレート
+## Slash Commands システム
 
-### 共通フロントマター
+### 基本的なWorkflow Commands
+
+- `/flt [タイトル] [思考内容]` - Fleeting Note作成
+- `/perm [Fleeting Note] [統合内容]` - Permanent Note作成
+- `/src [文献タイトル] [URL]` - Source Note作成
+- `/lit [Source Note] [章・セクション] [内容]` - Literature Note作成
+- `/find [検索キーワード] [タグ]` - ノート検索
+- `/edit [ファイルパス] [追記内容]` - 既存ノート編集
+
+## 効果的な使い分け指針
+
+### タスクの複雑さによる使い分け
+
+#### 単純作業 → Slash Commands
+- 単一ノートの作成・編集
+- 決まったフォーマットでの情報記録
+- 標準的なワークフローの実行
+
+#### 複雑作業 → Sub-Agents
+- 複数ノートの関係性分析
+- API連携を伴う情報取得
+- システム全体の最適化作業
+
+### 専門性による使い分け
+
+#### 文献研究
+1. **新規文献**: `/src` または `@literature-researcher`
+2. **章別詳細**: `/lit` または `@literature-researcher`
+3. **関連分析**: `@knowledge-synthesizer`
+
+#### 思考整理
+1. **アイデア記録**: `/flt`
+2. **思考統合**: `/perm` または `@knowledge-synthesizer`
+3. **構造化**: `@knowledge-synthesizer`
+
+#### システム管理
+1. **品質管理**: `@zk-note-manager`
+2. **タグ整理**: `@tag-organizer`
+3. **リンク構築**: `@link-builder`
+
+## ノート構造ガイドライン
+
+### フロントマター
+
 ```yaml
 title: "ノートタイトル"
 date: "YYYY-MM-DD"
-tags: []
-aliases: []
-draft: true/false
+tags: []           # kebab-case英語タグ
+aliases: []        # Permanent Noteのみ
+draft: false
 ```
 
-### Source Note 専用フィールド
+### Source Note専用フィールド
 ```yaml
 extra:
   type: "Book/Video/Blog/Reference"
@@ -66,51 +149,85 @@ extra:
   evaluation: "1-5"
 ```
 
-### Literature Note 専用フィールド
+### Literature Note専用フィールド
 ```yaml
 extra:
   chapter: "章・セクション情報"
   page: "ページ番号"
 ```
 
-## 重要なガイドライン
+## タグシステム
 
-### リンク記載方法
-- **Wikiスタイル**: `[[ファイルパス|表示名]]` の形式を使用
-- **例**: `[[LiteratureNotes/文献名-章名.md|章名]]`
-- **Source参照**: `[[SourceNotes/文献名.md|文献名]]`
-
-### タグとエイリアス
-
-#### 基本原則
+### 基本原則
 - **言語**: 英語のみ
 - **形式**: kebab-case (`jim-cummins`, `information-structure`)
-- **一意性確保**: 新規タグ前に `mcp__zk-mcp__get_tags()` で既存確認必須
+- **一意性**: 新規タグ作成前の既存確認必須
 
-#### タグカテゴリ（概念分類）
-- **分野タグ**: `linguistics`, `education`, `sla`
-- **専門領域タグ**: `pragmatics`, `phonetics`, `syntax`
-- **概念タグ**: `information-structure`, `bics-calp`, `interdependence-hypothesis`
-- **人名タグ**: `jim-cummins`, `stephen-krashen`, `chomsky`
+### カテゴリ別タグ戦略
 
-#### ノートタイプ別タグ方針
-- **Source Notes**: 分野タグ中心（`sla`, `education`, `linguistics`）
-- **Literature Notes**: 概念タグ・人名タグ中心
-- **Permanent Notes**: 概念タグ中心
-- **Fleeting Notes**: 自由度高め
+#### 分野タグ (Source Notes中心)
+- `linguistics`, `education`, `sla`
 
-#### 命名規則
-- **概念**: 正式英語名のkebab-case (`information-structure`)
-- **理論**: 一般的略語優先（`bics`, `calp`, `sla`）
-- **研究者**: `firstname-lastname` (`jim-cummins`)
+#### 概念タグ (Literature/Permanent Notes中心)
+- `information-structure`, `bics-calp`, `interdependence-hypothesis`
 
-#### エイリアス
-- **Permanent Noteのみ**: 検索性向上のため、英語の別名を1つ付与
+#### 研究者タグ (Literature Notes中心)
+- `jim-cummins`, `stephen-krashen`, `chomsky`
 
-## 2層構造の文献管理
+### 命名規則
+- **概念**: 正式英語名のkebab-case
+- **理論**: 一般的略語優先（`bics`, `calp`）
+- **研究者**: `firstname-lastname`
 
-### Source Note（SourceNotes/）
-文献の基本情報・概要・目次を管理する中心的なノート
+## リンクシステム
 
-### Literature Note（LiteratureNotes/）
-章・セクション別の詳細内容を記録し、Source Noteにリンク
+### Wikiスタイルリンク
+```
+[[ファイルパス|表示名]]
+```
+
+### 典型的リンクパターン
+```
+[[LiteratureNotes/文献名-章名.md|章名]]
+[[SourceNotes/文献名.md|文献名]]
+[[PermanentNotes/概念名.md|概念名]]
+```
+
+## 推奨ワークフロー
+
+### 1. 日常的な思考記録
+```
+/flt [思考タイトル] [内容] → 定期的統合 → @knowledge-synthesizer
+```
+
+### 2. 文献研究プロセス
+```
+@literature-researcher [文献情報] → /lit [章別内容] → @link-builder
+```
+
+### 3. 知識体系化
+```
+@knowledge-synthesizer [統合対象] → @tag-organizer [分類] → @link-builder [関係構築]
+```
+
+### 4. システムメンテナンス
+```
+@zk-note-manager [品質管理] → @tag-organizer [タグ整理] → @link-builder [リンク最適化]
+```
+
+## 重要な運用原則
+
+### 情報記録原則
+- ユーザー発言内容のみを記載
+- 推測・解釈・考察の追加禁止
+- 事実に基づく構造化のみ実施
+
+### 品質保証原則
+- API連携による情報の正確性確保
+- 一貫したフォーマットの維持
+- 定期的なシステム整合性チェック
+
+### 効率化原則
+- 適切なツール選択による作業最適化
+- Sub-AgentsとCommandsの使い分け
+- 自動化可能な処理の積極活用
