@@ -1,12 +1,11 @@
 {
   "mcpServers": {
     "zk-mcp": {
-      "command": "uv",
+      "command": "uvx",
       "args": [
-        "--directory",
-        "/Users/koei-kaji/src/github.com/koei-kaji/zk-mcp/",
-        "run",
-        "server.py"
+        "--from",
+        "git+https://github.com/koei-kaji/zk-utils",
+        "zk-utils-mcp"
       ],
       "env": {
         "ZK_DIR": "/Users/koei-kaji/src/github.com/koei-kaji/note-zk"
