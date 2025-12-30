@@ -1,0 +1,15 @@
+{
+  "name": "note-zk",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "textlint": "^15.2.2",
+    "textlint-filter-rule-comments": "^1.2.2",
+    "textlint-rule-preset-smarthr": "^1.36.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

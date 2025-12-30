@@ -49,7 +49,7 @@ Literature Note作成の具体的な計画を提示し、y/nで確認を取り�
 確認が取れたら以下を実行：
 
 1. `mcp__zk-mcp__get_tags`で既存タグを取得
-2. `mcp__zk-mcp__create_note`でLiteratureNotesディレクトリにノート作成
+2. `mcp__zk-mcp__create_note`で path=`LiteratureNotes/` でノートを作成
 3. `Read`ツールでファイル内容を確認
 4. `Edit`ツールで以下を更新：
    - body: Source Noteへのwikiリンク `[[ファイルパス|表示名]]`、章・セクション情報詳細、内容・要約（ユーザーの思考のみ記載）
