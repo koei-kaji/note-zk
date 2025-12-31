@@ -34,6 +34,10 @@ AI音声エージェントの構築とデプロイメントを学ぶUdemyコー�
 
 - [[LiteratureNotes/lit-202512301838-52xx.md|Lecture 8: The Goal of Voice Agents]]
 - [[LiteratureNotes/lit-202512301912-otxr.md|Lecture 9: Understanding Voice Agents]]
+- [[LiteratureNotes/lit-202512310918-qufs.md|Lecture 10: Which Models Fit the Setup]]
+- [[LiteratureNotes/lit-202512310945-5731.md|Lecture 11: Which Platforms Exist for Voice Agents?]]
+- [[LiteratureNotes/lit-202512311008-z1da.md|Lecture 12: Are Voice Agents Economically Viable?]]
+- Lecture 13: Recap
 
 ## セクション3: Vapi Basics & Website Integration (2時間6分)
 Vapiの基本とウェブサイトへの統合
