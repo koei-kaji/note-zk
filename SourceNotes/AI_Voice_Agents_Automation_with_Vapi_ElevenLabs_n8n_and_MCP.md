@@ -42,6 +42,8 @@ AI音声エージェントの構築とデプロイメントを学ぶUdemyコー�
 ## セクション3: Vapi Basics & Website Integration (2時間6分)
 Vapiの基本とウェブサイトへの統合
 
+- Lecture 14: What to Expect in This Section
+
 ## セクション4: Advanced Integration with n8n, MCP & Phone Features (2時間7分)
 n8n、MCP、電話機能との高度な統合
 
