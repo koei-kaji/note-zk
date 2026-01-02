@@ -29,9 +29,17 @@ AI音声エージェントの構築とデプロイメントを学ぶUdemyコー�
 ## セクション1: Introduction - Overview and Tips (17分)
 コース全体の概要と学習のヒント
 
+- Lecture 1: Welcome!
+- Lecture 2: Course Overview
+- Lecture 3: Explanation of Course Links
+- Lecture 4: Important Links
+- Lecture 5: Instructor Introduction: Arnold Oberleiter (Arnie)
+- Lecture 6: Tips and Goals for the Course
+
 ## セクション2: Technology Fundamentals & How Voice Agents Work (47分)
 音声エージェントの基礎技術と動作原理
 
+- Lecture 7: What to Expect in This Section
 - [[LiteratureNotes/lit-202512301838-52xx.md|Lecture 8: The Goal of Voice Agents]]
 - [[LiteratureNotes/lit-202512301912-otxr.md|Lecture 9: Understanding Voice Agents]]
 - [[LiteratureNotes/lit-202512310918-qufs.md|Lecture 10: Which Models Fit the Setup]]
@@ -43,6 +51,15 @@ AI音声エージェントの構築とデプロイメントを学ぶUdemyコー�
 Vapiの基本とウェブサイトへの統合
 
 - Lecture 14: What to Expect in This Section
+- Lecture 15: Vapi Sign-Up and Overview
+- Lecture 16: Build a Simple Voice Agent in Vapi: LLMs, STT, TTS, System Prompt & Rag Database
+- [[LiteratureNotes/lit-202601022002-z84s.md|Lecture 17: AI Agent as Appointment Booking Assistant: ElevenLabs Voice & Prompt Engineering]]
+- [[LiteratureNotes/lit-202601022034-kaak.md|Lecture 18: Further settings & dynamic JavaScript variables (date, name and more)]]
+- Lecture 19: Integrating the AI Agent into a Website & Customizing with CSS
+- [[LiteratureNotes/lit-202601022116-jw4v.md|Lecture 20: Tip: Bridge waiting times and pauses with filler words]]
+- Lecture 21: Testing, Debugging and Improving the Voice Agent
+- Lecture 22: Tip: Find the perfect LLM on OpenRouter (and fix context loss)
+- Lecture 23: Recap
 
 ## セクション4: Advanced Integration with n8n, MCP & Phone Features (2時間7分)
 n8n、MCP、電話機能との高度な統合

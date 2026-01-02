@@ -28,8 +28,11 @@ template = "default.md"
 exclude = [
   ".claude/*",
   ".github/*",
+  "AGENTS.md",
   "CLAUDE.md",
-  "README.md"
+  "README.md",
+  "node_modules/**/*",
+  "index.md"
 ]
 
 # Configure random ID generation.
