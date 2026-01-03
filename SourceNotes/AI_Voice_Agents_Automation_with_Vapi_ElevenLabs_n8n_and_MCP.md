@@ -10,7 +10,7 @@ extra:
   published_at: "2025-11" # yyyy-mm-dd
   authors: ["Arnold Oberleiter"]
   url: "https://www.udemy.com/course/ai-voice-agents-automation-with-vapi-elevenlabs-n8n-mcp/"
-  progress: "TODO" # TODO or IN PROGRESS or DONE or PENDING or REJECT
+  progress: "IN PROGRESS" # TODO or IN PROGRESS or DONE or PENDING or REJECT
   evaluation: "" # 1-5
 ---
 
@@ -57,12 +57,27 @@ Vapiの基本とウェブサイトへの統合
 - [[LiteratureNotes/lit-202601022034-kaak.md|Lecture 18: Further settings & dynamic JavaScript variables (date, name and more)]]
 - Lecture 19: Integrating the AI Agent into a Website & Customizing with CSS
 - [[LiteratureNotes/lit-202601022116-jw4v.md|Lecture 20: Tip: Bridge waiting times and pauses with filler words]]
-- Lecture 21: Testing, Debugging and Improving the Voice Agent
+- [[LiteratureNotes/lit-202601040848-mt6d.md|Lecture 21: Testing, Debugging and Improving the Voice Agent]]
 - Lecture 22: Tip: Find the perfect LLM on OpenRouter (and fix context loss)
 - Lecture 23: Recap
 
 ## セクション4: Advanced Integration with n8n, MCP & Phone Features (2時間7分)
 n8n、MCP、電話機能との高度な統合
+
+- Lecture 24: What to Expect in This Section
+- Lecture 25: n8n Crash Course: Sign-Up, Overview, Triggers, API Keys, Workflows, JSON & More
+- Lecture 26: n8n workflow builder with ai
+- Lecture 27: Connecting n8n with Vapi via MCP (Adding Tools)
+- Lecture 28: Extending AI Automation: Email Workflows summary with n8n MCP
+- Lecture 29: Get Information from a Google Sheet or SQL Database with n8n MCP
+- Lecture 30: Training a RAG App for Vapi Voice Agents: Uploading Data to a Vector Database
+- Lecture 31: Connecting a Pinecone Vectordatabase with n8n MCP and Vapi
+- Lecture 32: Connecting the MCP Server with Other AI Models like Claude Desktop or Cursor
+- Lecture 33: JSON File for Claude Desktop
+- Lecture 34: Sending confirmation emails automatically to your clients
+- Lecture 35: Adding Phone Numbers for Inbound Calls
+- Lecture 36: Adding Twilio Phone Numbers for Outbound Calls
+- Lecture 37: Recap
 
 ## セクション5: Production-Ready Implementations (1時間29分)
 本番環境対応の実装

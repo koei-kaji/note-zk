@@ -44,8 +44,16 @@ Permanent Note作成の具体的な計画を提示し、y/nで確認を取りま
 確認が取れたら以下を実行：
 
 ### 4.1 既存タグ取得・Note作成
+
+**ファイル命名規則**:
+- Permanent Noteのファイル名は**kebab-case（ハイフン区切り小文字）の英語名**を使用する
+- 例: `macos-ime-keyboard-shortcut-troubleshooting.md`
+- frontmatterの`title`フィールドには日本語タイトルを記載
+
+**手順**:
 1. `mcp__zk-mcp__get_tags`で既存タグを取得
 2. `mcp__zk-mcp__create_note`でPermanentNotesディレクトリにノート作成
+   - `title`パラメータにはkebab-caseの英語ファイル名を指定
 
 ### 4.2 内容統合・フロントマター更新
 1. `Read`ツールでファイル内容を確認

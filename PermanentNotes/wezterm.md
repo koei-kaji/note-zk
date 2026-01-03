@@ -14,7 +14,8 @@ WezTerm では、設定時点で自分がしたい Pane 分割ができないた
 設定は macOS 前提。
 
 - [dotfiles/.config/wezterm/wezterm.lua](https://github.com/koei-kaji/dotfiles/blob/ed9a134dec91748de136f20f8f8daab12473cc9f/.config/wezterm/wezterm.lua)
-![WezTerm](../assets/WezTerm.png)
+
+![screenshot](../assets/wezterm.png)
 
 # Configuration File
 
