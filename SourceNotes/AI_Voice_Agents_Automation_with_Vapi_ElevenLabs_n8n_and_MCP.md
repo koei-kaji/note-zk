@@ -70,7 +70,7 @@ n8n、MCP、電話機能との高度な統合
 - Lecture 27: Connecting n8n with Vapi via MCP (Adding Tools)
 - Lecture 28: Extending AI Automation: Email Workflows summary with n8n MCP
 - Lecture 29: Get Information from a Google Sheet or SQL Database with n8n MCP
-- Lecture 30: Training a RAG App for Vapi Voice Agents: Uploading Data to a Vector Database
+- [[LiteratureNotes/lit-202601100929-bz7j.md|Lecture 30: Training a RAG App for Vapi Voice Agents: Uploading Data to a Vector Database]]
 - Lecture 31: Connecting a Pinecone Vectordatabase with n8n MCP and Vapi
 - Lecture 32: Connecting the MCP Server with Other AI Models like Claude Desktop or Cursor
 - Lecture 33: JSON File for Claude Desktop
@@ -82,11 +82,38 @@ n8n、MCP、電話機能との高度な統合
 ## セクション5: Production-Ready Implementations (1時間29分)
 本番環境対応の実装
 
+- Lecture 38: What You'll Learn in This Section
+- Lecture 39: Which Voice Agents Should You Build and How much Are They Worth
+- Lecture 40: First Layouts of What We Can Build
+- Lecture 41: AI-Powered Voice Agent for Restaurant Reservations (Systemprompt & RAG)
+- Lecture 42: Example Systemprompt
+- Lecture 43: MCP Tool Integrations for Booking Tables
+- Lecture 44: Store Information Intelligently in a Database with AI
+- Lecture 45: Debugging, Optimizin, Prompt Engineering Tips & More
+- Lecture 46: Transfers, Escalations and Human in the Loop
+- Lecture 47: Including Sentiment Analysis in your App
+- Lecture 48: More Options: Custom Functions, Squads, End Call Tool, Sending Texts & more
+- Lecture 49: Recap
+
 ## セクション6: ElevenLabs & Prompt Engineering (2時間2分)
 ElevenLabsとプロンプトエンジニアリング
 
+- Lecture 50: What We Learn in This Section
+- Lecture 51: Overview: ElevenLabs Creative Platform, Voice Agents & Documentation
+- Lecture 52: Prompt Engineering Masterclass from ElevenLabs for AI Phone Agents
+- Lecture 53: Simple ElevenLabs Agent to Website Implementation
+- Lecture 54: Webhooks for Tools: Connecting ElevenLabs and n8n
+- Lecture 55: Additional Tools via Webhooks: Connecting n8n Agents with ElevenLabs
+- Lecture 56: Quick tip: How to Use Template
+- Lecture 57: Agent Workflows
+- Lecture 58: Testing and Debugging
+- Lecture 59: More Possibilities: MCP, Phone Numbers, Outbound Calls & More
+- Lecture 60: Recap: ElevenLabs Voice Agents, Webhooks & n8n Integration
+
 ## セクション7: Special Cases & Python Solutions (1時間42分)
 特殊ケースとPythonソリューション
+
+
 
 ## セクション8: Business Quick Start & Self-Hosting (45分)
 ビジネス向けクイックスタートとセルフホスティング
