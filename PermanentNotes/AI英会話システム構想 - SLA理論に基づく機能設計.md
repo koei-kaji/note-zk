@@ -1,6 +1,6 @@
 ---
 title: "AI英会話システム構想 - SLA理論に基づく機能設計"
-date: "2025-07-25"
+date: "2026-02-23"
 tags: ["sla", "language-learning", "comprehensible-input", "task-based-learning", "focus-on-form", "identity-theory", "bonny-norton"]
 aliases: []
 draft: false
