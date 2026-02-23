@@ -36,4 +36,4 @@ Averil Coxhead の AWL（2000年）の後継リスト。学術英語の習得に
 
 ## Related
 
-[[SourceNotes/New General Service List (NGSL).md|New General Service List (NGSL)]]
+[[SourceNotes/New_General_Service_List_(NGSL).md|New General Service List (NGSL)]]
