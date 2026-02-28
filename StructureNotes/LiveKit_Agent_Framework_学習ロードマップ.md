@@ -54,7 +54,6 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 | ステータス | ドキュメント | URL | ノート |
 |---|---|---|---|
 | ✅ | Rooms, Participants, and Tracks | https://docs.livekit.io/intro/basics/rooms-participants-tracks/ | [[LiteratureNotes/lit-202602281704-hf2o.md\|Rooms, Participants, and Tracks]] |
-| ⬜ | Building AI agents (intro) | https://docs.livekit.io/intro/basics/agents/ | - |
 
 ---
 
@@ -120,9 +119,9 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 
 ## 次にやること
 
-**Phase 1 の残り1ドキュメントへ。**
+**Phase 2 の最初: Agents Framework Introduction**
 
-次のドキュメント: **Building AI agents (intro)** → https://docs.livekit.io/intro/basics/agents/
+次のドキュメント: **Agents Framework Introduction** → https://docs.livekit.io/agents/
 
 ---
 
