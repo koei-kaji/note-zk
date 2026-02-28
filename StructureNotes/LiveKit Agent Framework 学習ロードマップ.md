@@ -134,3 +134,4 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 | 2026-02-28 | - | StructureNote | このノート |
 | 2026-02-28 | Phase 0 | LiteratureNote | [[LiteratureNotes/lit-202602281412-ynh7.md\|LiveKit Basics Overview]] |
 | 2026-02-28 | Phase 1 | LiteratureNote | [[LiteratureNotes/lit-202602281704-hf2o.md\|Rooms, Participants, and Tracks]] |
+| 2026-02-28 | Phase 1 | LiteratureNote | [[LiteratureNotes/lit-202602281722-eera.md\|Webhooks and Events]] |
