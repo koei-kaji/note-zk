@@ -13,7 +13,7 @@ draft: false
 目標: LiveKitのことなら俺に聞いてくれ状態のスペシャリストになる。転職も視野に入れたガチ学習。
 環境前提: ローカルPython → LiveKit Cloud（Langfuse observability）
 
-ドキュメント参照元: [[SourceNotes/LiveKit Agents Documentation.md|LiveKit Agents Documentation]]
+ドキュメント参照元: [[SourceNotes/LiveKit_Agents_Documentation.md|LiveKit Agents Documentation]]
 
 ---
 
@@ -130,7 +130,7 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 
 | 作成日 | フェーズ | ノートタイプ | タイトル |
 |---|---|---|---|
-| 2026-02-28 | - | SourceNote | [[SourceNotes/LiveKit Agents Documentation.md\|LiveKit Agents Documentation]] |
+| 2026-02-28 | - | SourceNote | [[SourceNotes/LiveKit_Agents_Documentation.md\|LiveKit Agents Documentation]] |
 | 2026-02-28 | - | StructureNote | このノート |
 | 2026-02-28 | Phase 0 | LiteratureNote | [[LiteratureNotes/lit-202602281412-ynh7.md\|LiveKit Basics Overview]] |
 | 2026-02-28 | Phase 1 | LiteratureNote | [[LiteratureNotes/lit-202602281704-hf2o.md\|Rooms, Participants, and Tracks]] |
