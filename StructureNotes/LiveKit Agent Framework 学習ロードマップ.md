@@ -11,8 +11,25 @@ draft: false
 # LiveKit Agent Framework 学習ロードマップ
 
 目標: LiveKitのことなら俺に聞いてくれ状態のスペシャリストになる。転職も視野に入れたガチ学習。
+環境前提: ローカルPython → LiveKit Cloud（Langfuse observability）
 
 ドキュメント参照元: [[SourceNotes/LiveKit Agents Documentation.md|LiveKit Agents Documentation]]
+
+---
+
+## 設計思想
+
+概要 → 詳細のブレイクダウン形式。各Phaseで「大きな絵」を掴んでから細部へ。
+
+```
+Phase 0: 基礎概念      → LiveKitとは何か
+Phase 1: 概念モデル    → Room/Participant/Track/Agent
+Phase 2: 全体像        → Agentsフレームワークの俯瞰
+Phase 3: インフラ層    → Worker/Job/Dispatchの仕組み
+Phase 4: 実装層        → Session/Logic/Tools/Nodesのコア
+Phase 5: モデル層      → STT/LLM/TTS/Realtimeの選択と設定
+Phase 6: 本番運用      → Deploy/Observability/Langfuse
+```
 
 ---
 
@@ -24,100 +41,94 @@ draft: false
 
 ---
 
-## Phase 1: LiveKit基礎概念
+## Phase 0: LiveKit基礎概念（概要を掴む）
 
 | ステータス | ドキュメント | URL | ノート |
 |---|---|---|---|
-| ⬜ | LiveKit Overview | https://docs.livekit.io/intro/overview/ | - |
-| ⬜ | About LiveKit | https://docs.livekit.io/intro/about/ | - |
-| ⬜ | Basics Overview | https://docs.livekit.io/intro/basics/ | - |
-| ⬜ | Rooms / Participants / Tracks | https://docs.livekit.io/intro/basics/rooms-participants-tracks/ | - |
-| ⬜ | Connecting to LiveKit | https://docs.livekit.io/intro/basics/connect/ | - |
+| ⬜ | LiveKit Basics Overview | https://docs.livekit.io/intro/basics/ | - |
+
+---
+
+## Phase 1: 概念モデル（コアの構成要素）
+
+| ステータス | ドキュメント | URL | ノート |
+|---|---|---|---|
+| ⬜ | Rooms, Participants, and Tracks | https://docs.livekit.io/intro/basics/rooms-participants-tracks/ | - |
 | ⬜ | Building AI agents (intro) | https://docs.livekit.io/intro/basics/agents/ | - |
 
 ---
 
-## Phase 2: Agentsフレームワーク概要
+## Phase 2: Agentsフレームワーク全体像（俯瞰）
 
 | ステータス | ドキュメント | URL | ノート |
 |---|---|---|---|
-| ⬜ | Agents Introduction | https://docs.livekit.io/agents/ | - |
+| ⬜ | Agents Framework Introduction | https://docs.livekit.io/agents/ | - |
 | ⬜ | Voice AI Quickstart | https://docs.livekit.io/agents/start/voice-ai-quickstart/ | - |
 | ⬜ | Multimodality Overview | https://docs.livekit.io/agents/multimodality/ | - |
 
 ---
 
-## Phase 3: Agent Server
+## Phase 3: Agent Server（インフラ層）
 
 | ステータス | ドキュメント | URL | ノート |
 |---|---|---|---|
-| ⬜ | Server lifecycle | https://docs.livekit.io/agents/server/lifecycle/ | - |
-| ⬜ | Job lifecycle | https://docs.livekit.io/agents/server/job/ | - |
-| ⬜ | Agent dispatch | https://docs.livekit.io/agents/server/agent-dispatch/ | - |
-| ⬜ | Startup modes | https://docs.livekit.io/agents/server/startup-modes/ | - |
+| ⬜ | Server Lifecycle | https://docs.livekit.io/agents/server/lifecycle/ | - |
+| ⬜ | Job Lifecycle | https://docs.livekit.io/agents/server/job/ | - |
+| ⬜ | Agent Dispatch | https://docs.livekit.io/agents/server/agent-dispatch/ | - |
+| ⬜ | Server Startup Modes | https://docs.livekit.io/agents/server/startup-modes/ | - |
 
 ---
 
-## Phase 4: Logic & Structure
+## Phase 4: Logic & Structure（コア実装層）
 
 | ステータス | ドキュメント | URL | ノート |
 |---|---|---|---|
-| ⬜ | Logic & Structure Overview | https://docs.livekit.io/agents/logic/ | - |
-| ⬜ | Agent sessions | https://docs.livekit.io/agents/logic/session/ | - |
-| ⬜ | Tasks & task groups | https://docs.livekit.io/agents/logic/tasks/ | - |
+| ⬜ | Logic Overview | https://docs.livekit.io/agents/logic/ | - |
+| ⬜ | Agent Session | https://docs.livekit.io/agents/logic/sessions/ | - |
 | ⬜ | Workflows | https://docs.livekit.io/agents/logic/workflows/ | - |
-| ⬜ | Tool definition & use | https://docs.livekit.io/agents/logic/tools/ | - |
-| ⬜ | Pipeline nodes & hooks | https://docs.livekit.io/agents/logic/pipeline/ | - |
-| ⬜ | Turn detection & interruptions | https://docs.livekit.io/agents/logic/turns/ | - |
-| ⬜ | Agents & handoffs | https://docs.livekit.io/agents/logic/handoffs/ | - |
-| ⬜ | External data & RAG | https://docs.livekit.io/agents/logic/context/ | - |
+| ⬜ | Agents & Handoffs | https://docs.livekit.io/agents/logic/agents-handoffs/ | - |
+| ⬜ | Tasks & Task Groups（Python only） | https://docs.livekit.io/agents/logic/tasks/ | - |
+| ⬜ | Tool Definition & Use | https://docs.livekit.io/agents/logic/tools/ | - |
+| ⬜ | Turn Detection & Interruptions | https://docs.livekit.io/agents/logic/turns/ | - |
+| ⬜ | Pipeline Nodes & Hooks | https://docs.livekit.io/agents/logic/nodes/ | - |
+| ⬜ | External Data & RAG | https://docs.livekit.io/agents/logic/external-data/ | - |
 
 ---
 
-## Phase 5: Models
+## Phase 5: Models（モデル選択・設定）
 
 | ステータス | ドキュメント | URL | ノート |
 |---|---|---|---|
 | ⬜ | Models Overview | https://docs.livekit.io/agents/models/ | - |
-| ⬜ | STT models | https://docs.livekit.io/agents/models/stt/ | - |
-| ⬜ | LLM models | https://docs.livekit.io/agents/models/llm/ | - |
-| ⬜ | TTS models | https://docs.livekit.io/agents/models/tts/ | - |
-| ⬜ | Realtime models | https://docs.livekit.io/agents/models/realtime/ | - |
+| ⬜ | STT Models | https://docs.livekit.io/agents/models/stt/ | - |
+| ⬜ | LLM Models | https://docs.livekit.io/agents/models/llm/ | - |
+| ⬜ | TTS Models | https://docs.livekit.io/agents/models/tts/ | - |
+| ⬜ | Realtime Models | https://docs.livekit.io/agents/models/realtime/ | - |
 
 ---
 
-## Phase 6: Deploy & Observe (LiveKit Cloud + Langfuse)
+## Phase 6: Deploy & Observe（本番運用）
 
 | ステータス | ドキュメント | URL | ノート |
 |---|---|---|---|
-| ⬜ | LiveKit Cloud | https://docs.livekit.io/intro/cloud/ | - |
-| ⬜ | Deploy to LiveKit Cloud | https://docs.livekit.io/deploy/agents/ | - |
-| ⬜ | Custom deployments | https://docs.livekit.io/deploy/custom/deployments/ | - |
-| ⬜ | Observability (Langfuse) | https://docs.livekit.io/deploy/observability/ | - |
-
----
-
-## Phase 7: Telephony & Advanced
-
-| ステータス | ドキュメント | URL | ノート |
-|---|---|---|---|
-| ⬜ | Telephony Overview | https://docs.livekit.io/telephony/ | - |
-| ⬜ | WebRTC Transport | https://docs.livekit.io/transport/ | - |
-| ⬜ | Recipes (use cases) | https://docs.livekit.io/recipes/ | - |
+| ⬜ | Agent Deployment Overview | https://docs.livekit.io/deploy/agents/ | - |
+| ⬜ | Observability Overview | https://docs.livekit.io/deploy/observability/ | - |
+| ⬜ | Agent Insights（LiveKit Cloud） | https://docs.livekit.io/deploy/observability/insights/ | - |
+| ⬜ | Data Hooks & OpenTelemetry（Langfuse） | https://docs.livekit.io/deploy/observability/data/ | - |
 
 ---
 
 ## 次にやること
 
-**Phase 1 から順番に進める。**
+**Phase 0 からスタート。**
 
-次のドキュメント: **LiveKit Overview** → https://docs.livekit.io/intro/overview/
+次のドキュメント: **LiveKit Basics Overview** → https://docs.livekit.io/intro/basics/
 
 ---
 
 ## 作成済みノート一覧
 
-| 作成日 | ノートタイプ | タイトル |
-|---|---|---|
-| 2026-02-28 | SourceNote | [[SourceNotes/LiveKit Agents Documentation.md\|LiveKit Agents Documentation]] |
-| 2026-02-28 | StructureNote | このノート |
+| 作成日 | フェーズ | ノートタイプ | タイトル |
+|---|---|---|---|
+| 2026-02-28 | - | SourceNote | [[SourceNotes/LiveKit Agents Documentation.md\|LiveKit Agents Documentation]] |
+| 2026-02-28 | - | StructureNote | このノート |
