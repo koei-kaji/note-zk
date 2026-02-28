@@ -53,7 +53,7 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 
 | ステータス | ドキュメント | URL | ノート |
 |---|---|---|---|
-| ⬜ | Rooms, Participants, and Tracks | https://docs.livekit.io/intro/basics/rooms-participants-tracks/ | - |
+| ✅ | Rooms, Participants, and Tracks | https://docs.livekit.io/intro/basics/rooms-participants-tracks/ | [[LiteratureNotes/lit-202602281704-hf2o.md\|Rooms, Participants, and Tracks]] |
 | ⬜ | Building AI agents (intro) | https://docs.livekit.io/intro/basics/agents/ | - |
 
 ---
@@ -120,9 +120,9 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 
 ## 次にやること
 
-**Phase 1 へ進む。**
+**Phase 1 の残り1ドキュメントへ。**
 
-次のドキュメント: **Rooms, Participants, and Tracks** → https://docs.livekit.io/intro/basics/rooms-participants-tracks/
+次のドキュメント: **Building AI agents (intro)** → https://docs.livekit.io/intro/basics/agents/
 
 ---
 
@@ -133,3 +133,4 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 | 2026-02-28 | - | SourceNote | [[SourceNotes/LiveKit Agents Documentation.md\|LiveKit Agents Documentation]] |
 | 2026-02-28 | - | StructureNote | このノート |
 | 2026-02-28 | Phase 0 | LiteratureNote | [[LiteratureNotes/lit-202602281412-ynh7.md\|LiveKit Basics Overview]] |
+| 2026-02-28 | Phase 1 | LiteratureNote | [[LiteratureNotes/lit-202602281704-hf2o.md\|Rooms, Participants, and Tracks]] |
