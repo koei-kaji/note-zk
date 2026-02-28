@@ -24,7 +24,7 @@ extra:
 LiveKit Agentsフレームワークの公式ドキュメント。
 音声・映像・物理AIエージェントを構築するためのリアルタイムフレームワーク。
 
-学習ロードマップ → [[StructureNotes/LiveKit Agent Framework 学習ロードマップ.md|学習ロードマップ]]
+学習ロードマップ → [[StructureNotes/LiveKit_Agent_Framework_学習ロードマップ.md|学習ロードマップ]]
 
 ---
 
