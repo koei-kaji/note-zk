@@ -61,7 +61,7 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 
 | ステータス | ドキュメント | URL | ノート |
 |---|---|---|---|
-| ⬜ | Agents Framework Introduction | https://docs.livekit.io/agents/ | - |
+| ✅ | Agents Framework Introduction | https://docs.livekit.io/agents/ | [[LiteratureNotes/lit-202602282303-pgqv.md\|Agents Framework Introduction]] |
 | ⬜ | Voice AI Quickstart | https://docs.livekit.io/agents/start/voice-ai-quickstart/ | - |
 | ⬜ | Multimodality Overview | https://docs.livekit.io/agents/multimodality/ | - |
 
@@ -119,9 +119,9 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 
 ## 次にやること
 
-**Phase 2 の最初: Agents Framework Introduction**
+**Phase 2 の残り 2 本へ。**
 
-次のドキュメント: **Agents Framework Introduction** → https://docs.livekit.io/agents/
+次のドキュメント: **Voice AI Quickstart** → https://docs.livekit.io/agents/start/voice-ai-quickstart/
 
 ---
 
@@ -134,3 +134,4 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 | 2026-02-28 | Phase 0 | LiteratureNote | [[LiteratureNotes/lit-202602281412-ynh7.md\|LiveKit Basics Overview]] |
 | 2026-02-28 | Phase 1 | LiteratureNote | [[LiteratureNotes/lit-202602281704-hf2o.md\|Rooms, Participants, and Tracks]] |
 | 2026-02-28 | Phase 1 | LiteratureNote | [[LiteratureNotes/lit-202602281722-eera.md\|Webhooks and Events]] |
+| 2026-02-28 | Phase 2 | LiteratureNote | [[LiteratureNotes/lit-202602282303-pgqv.md\|Agents Framework Introduction]] |
