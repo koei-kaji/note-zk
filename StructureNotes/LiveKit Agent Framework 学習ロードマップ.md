@@ -45,7 +45,7 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 
 | ステータス | ドキュメント | URL | ノート |
 |---|---|---|---|
-| ⬜ | LiveKit Basics Overview | https://docs.livekit.io/intro/basics/ | - |
+| ✅ | LiveKit Basics Overview | https://docs.livekit.io/intro/basics/ | [[LiteratureNotes/lit-202602281412-ynh7.md\|LiveKit Basics Overview]] |
 
 ---
 
@@ -120,9 +120,9 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 
 ## 次にやること
 
-**Phase 0 からスタート。**
+**Phase 1 へ進む。**
 
-次のドキュメント: **LiveKit Basics Overview** → https://docs.livekit.io/intro/basics/
+次のドキュメント: **Rooms, Participants, and Tracks** → https://docs.livekit.io/intro/basics/rooms-participants-tracks/
 
 ---
 
@@ -132,3 +132,4 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 |---|---|---|---|
 | 2026-02-28 | - | SourceNote | [[SourceNotes/LiveKit Agents Documentation.md\|LiveKit Agents Documentation]] |
 | 2026-02-28 | - | StructureNote | このノート |
+| 2026-02-28 | Phase 0 | LiteratureNote | [[LiteratureNotes/lit-202602281412-ynh7.md\|LiveKit Basics Overview]] |
