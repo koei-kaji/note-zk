@@ -63,7 +63,10 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 |---|---|---|---|
 | ✅ | Agents Framework Introduction | https://docs.livekit.io/agents/ | [[LiteratureNotes/lit-202602282303-pgqv.md\|Agents Framework Introduction]] |
 | ✅ | Voice AI Quickstart | https://docs.livekit.io/agents/start/voice-ai-quickstart/ | [[LiteratureNotes/lit-202603011301-l1zu.md\|Voice AI Quickstart]] |
-| ⬜ | Multimodality Overview | https://docs.livekit.io/agents/multimodality/ | - |
+| 🔄 | Multimodality Overview | https://docs.livekit.io/agents/multimodality/ | - |
+| ✅ | Text and Transcriptions | https://docs.livekit.io/agents/multimodality/text/ | [[LiteratureNotes/lit-202603011637-jxho.md\|Text and Transcriptions]] |
+| ⬜ | Agent Speech and Audio | https://docs.livekit.io/agents/multimodality/audio/ | - |
+| ⬜ | Vision | https://docs.livekit.io/agents/multimodality/vision/ | - |
 
 ---
 
@@ -119,9 +122,9 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 
 ## 次にやること
 
-**Phase 2 の残り 1 本へ。**
+**Phase 2 のMultimodality詳細を読み進める。**
 
-次のドキュメント: **Multimodality Overview** → https://docs.livekit.io/agents/multimodality/
+次のドキュメント: **Agent Speech and Audio** → https://docs.livekit.io/agents/multimodality/audio/
 
 ---
 
@@ -136,3 +139,4 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 | 2026-02-28 | Phase 1 | LiteratureNote | [[LiteratureNotes/lit-202602281722-eera.md\|Webhooks and Events]] |
 | 2026-02-28 | Phase 2 | LiteratureNote | [[LiteratureNotes/lit-202602282303-pgqv.md\|Agents Framework Introduction]] |
 | 2026-03-01 | Phase 2 | LiteratureNote | [[LiteratureNotes/lit-202603011301-l1zu.md\|Voice AI Quickstart]] |
+| 2026-03-01 | Phase 2 | LiteratureNote | [[LiteratureNotes/lit-202603011637-jxho.md\|Text and Transcriptions]] |
