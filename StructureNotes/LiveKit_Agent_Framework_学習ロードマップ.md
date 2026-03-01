@@ -65,7 +65,7 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 | ✅ | Voice AI Quickstart | https://docs.livekit.io/agents/start/voice-ai-quickstart/ | [[LiteratureNotes/lit-202603011301-l1zu.md\|Voice AI Quickstart]] |
 | 🔄 | Multimodality Overview | https://docs.livekit.io/agents/multimodality/ | - |
 | ✅ | Text and Transcriptions | https://docs.livekit.io/agents/multimodality/text/ | [[LiteratureNotes/lit-202603011637-jxho.md\|Text and Transcriptions]] |
-| ⬜ | Agent Speech and Audio | https://docs.livekit.io/agents/multimodality/audio/ | - |
+| ✅ | Agent Speech and Audio | https://docs.livekit.io/agents/multimodality/audio/ | [[LiteratureNotes/lit-202603012120-f8sk.md\|Agent Speech and Audio]] |
 | ⬜ | Vision | https://docs.livekit.io/agents/multimodality/vision/ | - |
 
 ---
@@ -124,7 +124,7 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 
 **Phase 2 のMultimodality詳細を読み進める。**
 
-次のドキュメント: **Agent Speech and Audio** → https://docs.livekit.io/agents/multimodality/audio/
+次のドキュメント: **Vision** → https://docs.livekit.io/agents/multimodality/vision/
 
 ---
 
@@ -140,3 +140,4 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 | 2026-02-28 | Phase 2 | LiteratureNote | [[LiteratureNotes/lit-202602282303-pgqv.md\|Agents Framework Introduction]] |
 | 2026-03-01 | Phase 2 | LiteratureNote | [[LiteratureNotes/lit-202603011301-l1zu.md\|Voice AI Quickstart]] |
 | 2026-03-01 | Phase 2 | LiteratureNote | [[LiteratureNotes/lit-202603011637-jxho.md\|Text and Transcriptions]] |
+| 2026-03-01 | Phase 2 | LiteratureNote | [[LiteratureNotes/lit-202603012120-f8sk.md\|Agent Speech and Audio]] |
