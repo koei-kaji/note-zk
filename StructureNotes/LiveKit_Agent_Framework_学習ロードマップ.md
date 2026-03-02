@@ -29,6 +29,7 @@ Phase 3: インフラ層    → Worker/Job/Dispatchの仕組み
 Phase 4: 実装層        → Session/Logic/Tools/Nodesのコア
 Phase 5: モデル層      → STT/LLM/TTS/Realtimeの選択と設定
 Phase 6: 本番運用      → Deploy/Observability/Langfuse
+Phase 7: フロント層    → RoomIO/カメラ/画面共有/ByteStreams（実装時に参照）
 ```
 
 ---
@@ -117,6 +118,19 @@ Phase 6: 本番運用      → Deploy/Observability/Langfuse
 | ⬜ | Observability Overview | https://docs.livekit.io/deploy/observability/ | - |
 | ⬜ | Agent Insights（LiveKit Cloud） | https://docs.livekit.io/deploy/observability/insights/ | - |
 | ⬜ | Data Hooks & OpenTelemetry（Langfuse） | https://docs.livekit.io/deploy/observability/data/ | - |
+
+---
+
+## Phase 7: フロントエンド実装（Transport 層）
+
+エージェント実装後、実際にフロントと繋ぐ際に必要な知識。
+
+| ステータス | ドキュメント | URL | ノート |
+|---|---|---|---|
+| ⬜ | RoomIO Overview | https://docs.livekit.io/home/client/tracks/ | - |
+| ⬜ | Camera and Microphone | https://docs.livekit.io/home/client/tracks/camera-microphone/ | - |
+| ⬜ | Screen Sharing | https://docs.livekit.io/home/client/tracks/screenshare/ | - |
+| ⬜ | Byte Streams | https://docs.livekit.io/home/client/data/byte-streams/ | - |
 
 ---
 
