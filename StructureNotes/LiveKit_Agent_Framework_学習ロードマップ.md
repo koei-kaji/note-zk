@@ -10,7 +10,7 @@ draft: false
 
 # LiveKit Agent Framework 学習ロードマップ
 
-目標: LiveKitのことなら俺に聞いてくれ状態のスペシャリストになる。転職も視野に入れたガチ学習。
+目標: LiveKitのことなら俺に聞いてくれ状態のスペシャリストになるためのガチ学習。
 環境前提: ローカルPython → LiveKit Cloud（Langfuse observability）
 
 ドキュメント参照元: [[SourceNotes/LiveKit_Agents_Documentation.md|LiveKit Agents Documentation]]
